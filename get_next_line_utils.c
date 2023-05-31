@@ -12,7 +12,7 @@ int	ft_strlen(const char *str)
 	return	(i);
 }
 
-char	*ft_strchr(const char *s; int i)
+char	*ft_strchr(const char *s, int i)
 {
 	while (*s)
 	{
