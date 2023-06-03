@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dnoll <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/03 11:52:16 by dnoll             #+#    #+#             */
+/*   Updated: 2023/06/03 12:11:06 by dnoll            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "get_next_line.h"
 
 int	ft_strlen(const char *str)
@@ -9,7 +21,7 @@ int	ft_strlen(const char *str)
 	{
 		i++;
 	}
-	return	(i);
+	return (i);
 }
 
 char	*ft_strchr(const char *s, int i)
@@ -54,7 +66,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	}
 	str[i + j] = '\0';
 	return (str);
-
 }
 
 char	*ft_strdup(const char *s)

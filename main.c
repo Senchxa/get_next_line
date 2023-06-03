@@ -1,26 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dnoll <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/03 11:51:51 by dnoll             #+#    #+#             */
-/*   Updated: 2023/06/03 12:10:16 by dnoll            ###   ########.fr       */
+/*   Created: 2023/06/03 12:20:34 by dnoll             #+#    #+#             */
+/*   Updated: 2023/06/03 14:19:40 by dnoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "get_next_line.h"
+#include <fcntl.h>
+#include <stdio.h>
 
-# include <stdlib.h>
-# include <unistd.h>
+int	main()
+{
+	int	fd;
+	char	*line;
 
-char	*get_next_line(int fd);
-int		ft_strlen(const char *str);
-char	*ft_strchr(const char *s, int i);
-char	*ft_strjoin(char const *s1, char const *s2);
-char	*ft_strdup(const char *s);
-char	*ft_substr(char const *s, unsigned int start, size_t len);
+	fd = open("test.txt", O_RDONLY);
 
-#endif
+	if (fd == -1)
+	{
+		printf("Error\n");
+		return (0);
+	}
+	line = "";
+	while (line != NULL)
+	{
+		line = get_next_line(fd);
+		printf("%s", line);
+	}
+	return (0);
+
+
+
+}

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dnoll <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/03 11:51:41 by dnoll             #+#    #+#             */
+/*   Updated: 2023/06/03 12:13:34 by dnoll            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "get_next_line.h"
 
 static char	*function_name(int fd, char *buf, char *backup)
@@ -14,7 +26,7 @@ static char	*function_name(int fd, char *buf, char *backup)
 			return (0);
 		}
 		else if (read_line == 0)
-			break;
+			break ;
 		buf[read_line] = '\0';
 		if (!backup)
 			backup = ft_strdup("");
@@ -23,15 +35,15 @@ static char	*function_name(int fd, char *buf, char *backup)
 		free(char_temp);
 		char_temp = NULL;
 		if (ft_strchr (buf, '\n'))
-			break;
+			break ;
 	}
 	return (backup);
 }
 
 static char	*extract(char *line)
 {
-	size_t count;
-	char *backup;
+	size_t		count;
+	char		*backup;
 
 	count = 0;
 	while (line[count] != '\n' && line [count] != '\0')
@@ -47,11 +59,12 @@ static char	*extract(char *line)
 	line[count + 1] = '\0';
 	return (backup);
 }
+
 char	*get_next_line(int fd)
 {
-	char		*line;
-	char		*buf;
-	static	char	*backup;
+	char			*line;
+	char			*buf;
+	static char		*backup;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 	{
