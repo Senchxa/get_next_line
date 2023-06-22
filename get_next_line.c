@@ -12,7 +12,7 @@
 
 #include "get_next_line.h"
 
-char *ft_save(char *next_line)
+char *ft_next_position(char *next_line)
 {
 	int		i;
 	int		j;
@@ -115,7 +115,7 @@ char	*get_next_line(int fd)
 		return (NULL);
 	}
 	line = ft_copy_line(next_line);
-	next_line = ft_save(next_line);
+	next_line = ft_next_position(next_line);
 	return  (line);
 
 }

@@ -17,9 +17,13 @@
 int	main()
 {
 	int	fd;
+	int	lines;
 	char	*line;
 
-	fd = open("test.txt", O_RDONLY);
+	lines = 1;
+	fd = open("cat.txt", O_RDONLY);
+
+
 
 	if (fd == -1)
 	{
@@ -30,7 +34,7 @@ int	main()
 	while (line != NULL)
 	{
 		line = get_next_line(fd);
-		printf("%s", line);
+		printf("%d->%s", lines++, line);
 	}
 	return (0);
 
